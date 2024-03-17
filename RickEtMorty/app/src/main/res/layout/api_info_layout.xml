@@ -3,8 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@drawable/rickmorty"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:layout_weight="1"
+    android:background="@drawable/rickmorty">
 
     <ScrollView
         android:id="@+id/scrollView2"
@@ -27,6 +28,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_margin="20dp"
+                android:layout_weight="2"
                 android:background="@drawable/back"
                 android:padding="20dp"
                 tools:srcCompat="@tools:sample/avatars" />
@@ -37,10 +39,10 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginStart="40dp"
-                android:fontFamily="@font/poppins_regular"
                 android:layout_marginEnd="40dp"
                 android:layout_marginBottom="20dp"
                 android:background="@drawable/back"
+                android:fontFamily="@font/poppins_regular"
                 android:gravity="left"
                 android:padding="40dp"
                 android:text="txt"
@@ -52,9 +54,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:fontFamily="@font/poppins_regular"
                 android:layout_margin="10dp"
+                android:layout_weight="1"
                 android:background="@drawable/btn_round"
+                android:fontFamily="@font/poppins_regular"
                 android:text="Retour"
                 android:textColor="#FFFFFF" />
 
