@@ -37,12 +37,14 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginStart="40dp"
+                android:fontFamily="@font/poppins_regular"
                 android:layout_marginEnd="40dp"
                 android:layout_marginBottom="20dp"
                 android:background="@drawable/back"
-                android:gravity="center"
+                android:gravity="left"
                 android:padding="40dp"
                 android:text="txt"
+                android:textColor="#000000"
                 android:textSize="24sp" />
 
             <androidx.appcompat.widget.AppCompatButton
@@ -50,6 +52,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:fontFamily="@font/poppins_regular"
                 android:layout_margin="10dp"
                 android:background="@drawable/btn_round"
                 android:text="Retour"

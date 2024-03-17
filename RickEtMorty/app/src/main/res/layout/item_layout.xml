@@ -40,6 +40,7 @@
                 android:layout_width="194dp"
                 android:layout_height="69dp"
                 android:layout_margin="10dp"
+                android:fontFamily="@font/poppins_regular"
                 android:layout_weight="1"
                 android:gravity="center|left"
                 android:text="TextView"

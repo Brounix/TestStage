@@ -5,18 +5,13 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.util.Log;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.projet.ricketmorty.manager.IApiDataManagerCallBack;
 import com.projet.ricketmorty.manager.MainActivityController;
 import com.projet.ricketmorty.model.Result;
-import com.projet.ricketmorty.model.RickMorty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,7 +37,7 @@ public class MainActivity extends AppCompatActivity implements IApiDataManagerCa
         adapter = new RecyclerViewAdapter(new ArrayList<>(), this);
         recyclerView.setAdapter(adapter);
 
-        getApiData(0,20);
+        getApiData(0,LIMIT);
 
         recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
             private int lastVisibleItemPosition;
@@ -55,11 +50,10 @@ public class MainActivity extends AppCompatActivity implements IApiDataManagerCa
 
                 int itemCountBeforeLoad = adapter.getItemCount();
 
-                Log.d("list", lastVisibleItemPosition + "");
 
                 if (lastVisibleItemPosition >= itemCountBeforeLoad-1 && !load) {
                     itemCount += LIMIT;
-                    getApiData(itemCount-LIMIT,itemCount);
+                    getApiData(itemCount,itemCount+LIMIT);
                     load = true;
                 }
             }

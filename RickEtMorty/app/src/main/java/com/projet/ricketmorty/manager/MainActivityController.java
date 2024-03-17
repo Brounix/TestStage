@@ -3,12 +3,8 @@ package com.projet.ricketmorty.manager;
 import android.text.TextUtils;
 import android.util.Log;
 
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 import com.projet.ricketmorty.model.Result;
-import com.projet.ricketmorty.model.RickMorty;
 
-import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,10 +24,13 @@ public class MainActivityController {
     public void getRickMorty(IApiDataManagerCallBack callBack,int offset, int limit) {
         List<String> idList = new ArrayList<>();
 
-        for (int i = offset + 1; i <= offset + limit; i++) {
+        for (int i = offset + 1; i <= limit; i++) {
             idList.add(String.valueOf(i));
         }
         String idString = TextUtils.join(",", idList);
+
+        Log.e("list", idString);
+
 
         Call<List<Result>> getRickMortyChar = apiManager.getApiService().getApi(idString);
         getRickMortyChar.enqueue(new Callback<List<Result>>() {
@@ -39,8 +38,6 @@ public class MainActivityController {
             public void onResponse(Call<List<Result>> call, Response<List<Result>> response) {
                 if (response.isSuccessful() && response.body() != null) {
                     List<Result> rickMortyList = response.body();
-
-                    Log.d("Result", "Name: " + rickMortyList.size());
 
                     if (rickMortyList != null) {
                         Log.e("Response", "Api found");
